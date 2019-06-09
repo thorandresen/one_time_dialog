@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:one_time_dialog/one_time_dialog.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -29,6 +31,16 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Example'),
         centerTitle: true,
       ),
+      body: new Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          OneTimeDialog(
+              amountOfTimesToShow: 2,
+              content: Text('xd'),
+              context: context,
+              id: 'unique5')
+        ],
+      )
     );
   }
 }

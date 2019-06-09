@@ -17,6 +17,10 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  one_time_dialog:
+    path: ../
+
+
   flutter:
     sdk: flutter
 
