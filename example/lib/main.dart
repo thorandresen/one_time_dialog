@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
               new FlatButton(onPressed: () => Navigator.pop(context), child: Text('OK'))
             ],
             context: context,
-            id: 'UniqueID!2',
+            id: 'AUniqueID1',
           ),
         ],
       ),

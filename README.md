@@ -22,7 +22,7 @@ OneTimeDialog(
     new FlatButton(onPressed: () => Navigator.pop(context), child: Text('OK'))
   ],
   context: context,
-  id: 'UniqueID!2',
+  id: 'AUniqueID',
 ),
 ```
 
