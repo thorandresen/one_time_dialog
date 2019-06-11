@@ -26,3 +26,7 @@ OneTimeDialog(
 ),
 ```
 
+### Constructor
+  `amountOfTimesToShow` => Amount of times for the widget to be shown. Give this a value of 0 to keep showing (Works with offset).
+  
+
