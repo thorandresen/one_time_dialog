@@ -26,7 +26,12 @@ OneTimeDialog(
 ),
 ```
 
-### Constructor
-  `amountOfTimesToShow` => Amount of times for the widget to be shown. Give this a value of 0 to keep showing (Works with offset).
-  
+#### Example gif
+![](one_time_dialog_gif.gif)
+
+### Constructor (The ones unique for this packet)
+`amountOfTimesToShow` => Amount of times for the widget to be shown. Give this a value of 0 to keep showing (Works with offset).
+`id` => An ID that is used in sharedprefferences. Make this unique.
+`offset` => To show the dialog within an offset. If the offset is 2, the dialog will only be shown every second time the package is trying to be build.
+   
 
