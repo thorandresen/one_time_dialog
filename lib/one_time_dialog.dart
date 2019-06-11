@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+/// Author: Thor Garske Andresen (https://github.com/thorandresen)
+
 /// A class for building an Alert Dialog a specific amount of times.
 class OneTimeDialogState extends State<OneTimeDialog>{
   SharedPreferences prefs; // Prefs variable.
@@ -21,10 +23,11 @@ class OneTimeDialogState extends State<OneTimeDialog>{
     return new Container();
   }
 
-  /// This method gathers information from SharedPrefferences and checks wether to show the dialog or not.
+  /// This method gathers information from SharedPrefferences and checks whether to show the dialog or not.
   Future<bool> _timesToShow() async {
       // If the id doesn't exist it will make it as a shared preferences.
-      if (prefs.getInt(widget.id) == null || prefs.getInt(widget.id) == "" || prefs.getInt(widget.id) == {}) {
+      bool prefsHasNotBeenPopulatedYet = prefs.getInt(widget.id) == null || prefs.getInt(widget.id) == "" || prefs.getInt(widget.id) == {};
+      if (prefsHasNotBeenPopulatedYet) {
         prefs.setInt(widget.id, widget.amountOfTimesToShow);
       }
 
@@ -96,7 +99,8 @@ class OneTimeDialogState extends State<OneTimeDialog>{
 
   /// Method that chooses what LocalAmount strategy to use.
   void _localAmountStrategyChooser(){
-    if(widget.amountOfTimesToShow > 0) {
+    bool amountOfTimesToShowGreaterThanZero = widget.amountOfTimesToShow > 0;
+    if(amountOfTimesToShowGreaterThanZero) {
       _localAmountStrategy = new NormalLocalAmountStrategy();
     }
     else if(widget.amountOfTimesToShow == 0 && widget.offset != null){
@@ -173,10 +177,12 @@ class NormalDialogShowStrategy extends DialogShowStrategy {
 
 /// This class only shows the dialog if the amount % offset equals 0, which means it is its turn to show.
 class OffsetDialogShowStrategy extends DialogShowStrategy {
-  int localAmount;
+  int localAmount; // localAmount local variable.
+
   @override
   bool shouldShowDialog(int offset) {
-        if (localAmount % offset == 0) {
+        bool localAmountModuloOffsetEqualsZero = localAmount % offset == 0;
+        if (localAmountModuloOffsetEqualsZero) {
           return true;
         }
         else {
@@ -184,6 +190,7 @@ class OffsetDialogShowStrategy extends DialogShowStrategy {
         }
   }
 
+  // Gets the local amount for use in shouldShowDialog.
   void setLocalAmount(int localAmount){
     this.localAmount = localAmount;
   }
@@ -201,7 +208,8 @@ abstract class LocalAmountStrategy {
 class NormalLocalAmountStrategy extends LocalAmountStrategy {
   @override
   bool localAmountCondition(int localAmount) {
-    if(localAmount > 0) {
+    bool localAmountIsGreaterThanZero = localAmount > 0;
+    if(localAmountIsGreaterThanZero) {
       return true;
     } else {
       return false;

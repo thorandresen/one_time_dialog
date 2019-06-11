@@ -1,8 +1,8 @@
 name: one_time_dialog
-description: A flutter package for showing a dialog X amount of times to the user.
+description: A package for showing an alertdialog X amount of times.
 version: 0.0.1
-author: Thor Garske Andresen
-homepage: https://github.com/thorandresen
+author: Thor Garske Andresen<thorg3@gmail.com>
+homepage: https://github.com/thorandresen/one_time_dialog
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

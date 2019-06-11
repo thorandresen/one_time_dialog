@@ -1,14 +1,28 @@
 # one_time_dialog
 
-A flutter package for showing a dialog X amount of times to the user.
+A flutter package for showing a dialog X amount of times to the user. This package uses SharedPreferences to make sure dialogs aren't shown too many times.
 
-## Getting Started
+## Usage
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+To use this plugin, add `one_time_dialog` as dependency to pubspec.yaml file.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### Example
+
+The code below returns a widget and can be added anywhere this is allowed. However it only returns an empty container (So it won't ruin your UI). It uses showDialog() to show the dialog.
+
+```
+import 'package:flutter/material.dart';
+import 'package:one_time_dialog/one_time_dialog.dart';
+
+OneTimeDialog(
+  amountOfTimesToShow: 1,
+  title: Text('Data policy'),
+  content: Text('We are gathering personal data about you!'),
+  actions: <Widget>[
+    new FlatButton(onPressed: () => Navigator.pop(context), child: Text('OK'))
+  ],
+  context: context,
+  id: 'UniqueID!2',
+),
+```
+

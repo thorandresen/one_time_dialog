@@ -43,14 +43,14 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           // The dialog
           OneTimeDialog(
-            amountOfTimesToShow: 6,
+            amountOfTimesToShow: 1,
             title: Text('Data policy'),
             content: Text('We are gathering personal data about you!'),
             actions: <Widget>[
               new FlatButton(onPressed: () => Navigator.pop(context), child: Text('OK'))
             ],
             context: context,
-            id: 'UniqueID!',
+            id: 'UniqueID!2',
           ),
         ],
       ),
