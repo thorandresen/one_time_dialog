@@ -31,16 +31,29 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Example'),
         centerTitle: true,
       ),
-      body: new Row(
+      body: new Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
+          // Reload button.
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new RaisedButton(onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyHomePage())), child: Text('Reload page!')),
+            ],
+          ),
+          // The dialog
           OneTimeDialog(
-              amountOfTimesToShow: 2,
-              content: Text('xd'),
-              context: context,
-              id: 'unique5')
+            amountOfTimesToShow: 6,
+            title: Text('Data policy'),
+            content: Text('We are gathering personal data about you!'),
+            actions: <Widget>[
+              new FlatButton(onPressed: () => Navigator.pop(context), child: Text('OK'))
+            ],
+            context: context,
+            id: 'UniqueID!',
+          ),
         ],
-      )
+      ),
     );
   }
 }
