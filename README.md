@@ -2,6 +2,8 @@
 
 A flutter package for showing a dialog X amount of times to the user. This package uses SharedPreferences to make sure dialogs aren't shown too many times.
 
+The package can be used for showing some information to the user the first time they open the page. It can also be used with offset to show the user a dialog once in a while (like every fifth or tenth timewhen the user opens the page).
+
 ## Usage
 
 To use this plugin, add `one_time_dialog` as dependency to pubspec.yaml file.
