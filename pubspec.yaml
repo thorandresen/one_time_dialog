@@ -1,6 +1,6 @@
 name: one_time_dialog
-description: description: A flutter package for showing a dialog X amount of times to the user. This package uses SharedPreferences to make sure dialogs aren't shown too many times.
-version: 0.1.0
+description: A flutter package for showing a dialog X amount of times to the user. This package uses SharedPreferences to make sure dialogs aren't shown too many times.
+version: 0.1.1
 author: Thor Garske Andresen<thorg3@gmail.com>
 homepage: https://github.com/thorandresen/one_time_dialog
 
