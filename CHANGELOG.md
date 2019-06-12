@@ -1,3 +1,7 @@
+## [0.1.1]
+
+* Updated pubspec description to comply with pub.dev guidelines about length.
+
 ## [0.1.0]
 
 * Second release
